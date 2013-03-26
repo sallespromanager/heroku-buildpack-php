@@ -35,7 +35,7 @@ echo "-----> Salles pro Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
 #PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
-PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/694f7370-90f3-4262-9d6d-ef3627951089"
+PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/6e5410cb-49f8-4d6f-b3bc-972a49ef92cf"
 
 echo "-----> Salles pro Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
