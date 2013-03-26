@@ -7,7 +7,7 @@ set -e
 # config
 APACHE_VERSION="2.2.22"
 APACHE_PATH="apache"
-PHP_VERSION="5.3.10"
+PHP_VERSION="5.3.6"
 PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
@@ -31,13 +31,13 @@ if [ -f www/Procfile ]; then
 fi
 
 APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
-echo "-----> Bundling Apache version $APACHE_VERSION"
+echo "-----> Salles pro Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
 #PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
 PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/694f7370-90f3-4262-9d6d-ef3627951089"
 
-echo "-----> Bundling PHP version $PHP_VERSION"
+echo "-----> Salles pro Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
 
 # update config files
