@@ -34,8 +34,8 @@ APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
 echo "-----> Salles pro Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
-#PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
-PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/0ba3d125-e8fb-4cf8-86e9-777cf4c5f5bd"
+PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
+#PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/0ba3d125-e8fb-4cf8-86e9-777cf4c5f5bd"
 
 echo "-----> Salles pro Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
@@ -46,7 +46,10 @@ cp $LP_DIR/conf/php.ini php
 
 # make php available on bin
 mkdir -p bin
-#ln -s /app/php/bin/php bin/php
+if [ -f bin/php ]; then
+  rm bin/php
+fi
+ln -s /app/php/bin/php bin/php
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
