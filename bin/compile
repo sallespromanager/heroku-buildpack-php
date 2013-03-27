@@ -34,8 +34,8 @@ APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
 echo "-----> Salles pro Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
-PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
-#PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/0ba3d125-e8fb-4cf8-86e9-777cf4c5f5bd"
+#PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
+PHP_URL="http://vulcan-powerful-badlands-1995.herokuapp.com/output/f8df0d2c-7e36-4e21-9c54-2625a6b79417"
 
 echo "-----> Salles pro Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
